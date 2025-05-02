@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Dust</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.163.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.163.0/examples/jsm/",
+          "animejs": "https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.es.js",
+          "simplex-noise": "https://cdn.skypack.dev/simplex-noise@4.0.1"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div id="loading">
+        <span id="loading-text">Initializing...</span>
+        <div id="progress-container">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <div id="ui">
+        <div id="info">Enter Text Below</div>
+    </div>
+
+    <div id="controls">
+        <input type="text" id="text-input" placeholder="Enter text..." value="Hello">
+        <button id="generate-btn" disabled>Generate Pixel</button>
+
+        <div id="color-picker">
+            <div class="color-option active" data-scheme="fire" style="background: linear-gradient(to bottom right, #ff4500, #ffcc00)"></div>
+            <div class="color-option" data-scheme="neon" style="background: linear-gradient(to bottom right, #ff00ff, #00ffff)"></div>
+            <div class="color-option" data-scheme="nature" style="background: linear-gradient(to bottom right, #00ff00, #66ffcc)"></div>
+            <div class="color-option" data-scheme="rainbow" style="background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"></div>
+        </div>
+    </div>
+
+    <canvas id="webglCanvas"></canvas>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
